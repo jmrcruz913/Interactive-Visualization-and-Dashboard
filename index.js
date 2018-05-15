@@ -1,9 +1,4 @@
-// Getting references
-// var selDataset = document.getElementById("selDataset");
-// var PANEL = document.getElementById("sample-metadata");
-// var PIE = document.getElementById("pie");
-// var BUBBLE = document.getElementById("bubble");
-// var Gauge = document.getElementById("gauge");
+
 
 function updateMetaData(data) {
     // Reference to Panel element for sample metadata
@@ -97,7 +92,7 @@ function getData(sample, callback) {
         if (error) return console.warn(error);
         updateMetaData(metaData);
     })
-    // BONUS - Build the Gauge Chart
+    
     buildGauge(sample);
 }
 function getOptions() {
@@ -123,9 +118,7 @@ function init() {
 }
 // Initialize the dashboard
 init();
-/**
-* BONUS Solution
-**/
+
 function buildGauge(sample) {
     Plotly.d3.json(`/wfreq/${sample}`, function(error, wfreq) {
         if (error) return console.warn(error);
